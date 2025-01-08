@@ -21,7 +21,7 @@ apply_bootloader(){
   if [ -d ${workspace}/bootloader-${BOARD} ];then rm -rf ${workspace}/bootloader-${BOARD}; fi
   
   dd if=${workspace}/${BL_CONFIG}/boot0_sdcard.fex of=${workspace}/bootloader.bin
-  dd if=${workspace}/${BL_CONFIG}/boot_package.fex of=${workspace}/bootloader.bin bs=8k count=2049 conv=notrunc
+  dd if=${workspace}/${BL_CONFIG}/boot_package.fex of=${workspace}/bootloader.bin bs=8k seek=2049 conv=notrunc
   
   mkdir -p ${workspace}/bootloader-${BOARD}/extlinux
   cp ${workspace}/../target/boot/uInitrd ${workspace}/bootloader-${BOARD}
