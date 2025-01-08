@@ -147,6 +147,8 @@ install_image_modules(){
         CROSS_COMPILE=${KERNEL_GCC} \
         install \
         INSTALL_PATH=${workspace}/deb-data/image/boot
+
+    mkimage -A arm -O linux -T kernel -C none -a "0x40008000" -e "0x40008000" -n "Linux kernel" -d "${workspace}/deb-data/image/boot/Image" "${workspace}/deb-data/image/boot/uImage"
 }
 
 install_headers(){
