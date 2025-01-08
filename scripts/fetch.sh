@@ -104,7 +104,6 @@ clone_u-boot()
         git pull
         popd
     else
-        git clone --depth=1 ${ATF_REPO} -b ${ATF_BRANCH} atf
         git clone --depth=1 ${UBOOT_REPO} -b ${UBOOT_BRANCH} ${BL_CONFIG}
     fi
 }
