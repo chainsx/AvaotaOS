@@ -148,7 +148,7 @@ install_image_modules(){
         install \
         INSTALL_PATH=${workspace}/deb-data/image/boot
 
-    mkimage -A arm -O linux -T kernel -C none -a "0x40008000" -e "0x40008000" -n "Linux kernel" -d "${workspace}/linux/arch/arm64/boot/Image" "${workspace}/deb-data/image/boot/uImage"
+    mkimage -A arm -O linux -T kernel -C none -a "0x41000000" -e "0x41000000" -n "Linux kernel" -d "${workspace}/linux/arch/arm64/boot/Image" "${workspace}/deb-data/image/boot/uImage"
 }
 
 install_headers(){
